@@ -14,6 +14,7 @@
 		5912DD3129851286007A73B3 /* SimpleSample_iOS_CoreDataAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5912DD3029851286007A73B3 /* SimpleSample_iOS_CoreDataAppTests.swift */; };
 		5912DD3B29851286007A73B3 /* SimpleSample_iOS_CoreDataAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5912DD3A29851286007A73B3 /* SimpleSample_iOS_CoreDataAppUITests.swift */; };
 		5912DD3D29851286007A73B3 /* SimpleSample_iOS_CoreDataAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5912DD3C29851286007A73B3 /* SimpleSample_iOS_CoreDataAppUITestsLaunchTests.swift */; };
+		5912DD85298512DC007A73B3 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5912DD84298512DC007A73B3 /* PersistenceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		5912DD3629851286007A73B3 /* SimpleSample-iOS-CoreDataAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SimpleSample-iOS-CoreDataAppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5912DD3A29851286007A73B3 /* SimpleSample_iOS_CoreDataAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleSample_iOS_CoreDataAppUITests.swift; sourceTree = "<group>"; };
 		5912DD3C29851286007A73B3 /* SimpleSample_iOS_CoreDataAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleSample_iOS_CoreDataAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5912DD84298512DC007A73B3 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				5912DD1F29851286007A73B3 /* SimpleSample_iOS_CoreDataAppApp.swift */,
 				5912DD2129851286007A73B3 /* ContentView.swift */,
+				5912DD84298512DC007A73B3 /* PersistenceController.swift */,
 				5912DD2329851286007A73B3 /* Assets.xcassets */,
 				5912DD2529851286007A73B3 /* Preview Content */,
 			);
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5912DD85298512DC007A73B3 /* PersistenceController.swift in Sources */,
 				5912DD2229851286007A73B3 /* ContentView.swift in Sources */,
 				5912DD2029851286007A73B3 /* SimpleSample_iOS_CoreDataAppApp.swift in Sources */,
 			);
