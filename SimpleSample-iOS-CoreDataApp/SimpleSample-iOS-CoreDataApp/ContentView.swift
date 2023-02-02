@@ -9,6 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State private var imagePickerPresented = false
+    @State private var selectedImage: UIImage?
+    
     var body: some View {
         VStack(spacing: 10) {
             Spacer()
@@ -32,7 +35,7 @@ struct ContentView: View {
             .background(.blue)
             
             Button {
-                
+                imagePickerPresented.toggle()
             } label: {
                 Text("Show Image")
                     .font(.system(size: 20, weight: .bold))
@@ -41,6 +44,9 @@ struct ContentView: View {
             .padding(20)
             .frame(maxWidth: .infinity)
             .background(.blue)
+            .sheet(isPresented: $imagePickerPresented) {
+                ImagePickerController(image: $selectedImage)
+            }
             
             Spacer()
             
