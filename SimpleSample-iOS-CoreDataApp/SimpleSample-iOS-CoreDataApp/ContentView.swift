@@ -113,7 +113,6 @@ extension ContentView {
                 debugPrint("🔴🔴🔴 Unresolved error \(nsError)")
             }
         }
-        
     }
     
     private func fetchEntitys() -> [Entity] {
