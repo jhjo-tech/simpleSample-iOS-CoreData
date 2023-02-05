@@ -16,10 +16,10 @@ struct ContentView: View {
         VStack(spacing: 10) {
             Spacer()
             
-            Image(systemName: "")
+            showImage(image: selectedImage)
                 .resizable()
+                .scaledToFit()
                 .frame(maxWidth: .infinity, maxHeight: 150)
-                .background(.gray)
             
             Spacer()
             
@@ -59,7 +59,11 @@ struct ContentView: View {
             
         }
         .padding()
-        
+    }
+    
+    private func showImage(image: UIImage?) -> Image {
+        guard let guardImage = image else { return Image(systemName: "photo") }
+        return Image(uiImage: guardImage)
     }
 }
 
