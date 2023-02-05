@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     @State private var imagePickerPresented = false
     @State private var selectedImage: UIImage?
+    @State private var loadedImage: UIImage?
     
     var body: some View {
         VStack(spacing: 10) {
@@ -25,9 +27,33 @@ struct ContentView: View {
             Spacer()
             
             Button {
-                saveImage(imageData: Data())
+                if let imageData = selectedImage?.pngData() {
+                    saveImage(imageData: imageData)
+                }
             } label: {
                 Text("Save Image")
+                    .font(.system(size: 20, weight: .bold))
+                    .foregroundColor(.white)
+            }
+            .padding(20)
+            .frame(maxWidth: .infinity)
+            .background(.blue)
+            
+            Button {
+                loadedImage = UIImage(data: fetchEntitys().first?.img ?? Data())
+            } label: {
+                Text("Load first Image")
+                    .font(.system(size: 20, weight: .bold))
+                    .foregroundColor(.white)
+            }
+            .padding(20)
+            .frame(maxWidth: .infinity)
+            .background(.blue)
+            
+            Button {
+                removeAllEntity()
+            } label: {
+                Text("Remove Entitys")
                     .font(.system(size: 20, weight: .bold))
                     .foregroundColor(.white)
             }
@@ -51,11 +77,10 @@ struct ContentView: View {
             
             Spacer()
             
-            Image(systemName: "")
+            showImage(image: loadedImage)
                 .resizable()
+                .scaledToFit()
                 .frame(maxWidth: .infinity, maxHeight: 150)
-                .background(.gray)
-            
             Spacer()
             
         }
@@ -69,7 +94,7 @@ struct ContentView: View {
     
     private func saveImage(imageData: Data) {
         let newItem = Entity(context: viewContext)
-        newItem.img = Data()
+        newItem.img = imageData
         do {
             try viewContext.save()
         }
@@ -77,6 +102,37 @@ struct ContentView: View {
             // Replace this implementation with code to handle the error appropriately.
             let nsError = error as NSError
             debugPrint("🔴🔴🔴 Unresolved error \(nsError)")
+        }
+    }
+    
+    private func fetchEntitys() -> [Entity] {
+        do {
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Entity")
+            let entitys = try viewContext.fetch(fetchRequest) as! [Entity]
+            debugPrint("Load Entity(\(entitys.count)pcs) : \(entitys)")
+            return entitys
+        }
+        catch {
+            debugPrint("Error while feching the image")
+        }
+        
+        return []
+    }
+    
+    private func removeAllEntity() {
+        do {
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Entity")
+            let entitys = try viewContext.fetch(fetchRequest) as! [Entity]
+            entitys.forEach(viewContext.delete)
+            
+            try viewContext.save()
+            
+            loadedImage = nil
+            
+            debugPrint(#function)
+        }
+        catch {
+            debugPrint("Error while feching the image")
         }
     }
 }
