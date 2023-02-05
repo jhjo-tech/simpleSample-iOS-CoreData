@@ -7,8 +7,27 @@
 
 import CoreData
 
+
 struct PersistenceController {
     static let shared = PersistenceController(modelDataNama: "")
+    
+    static var preview: PersistenceController = {
+        let result = PersistenceController(modelDataNama: "", inMemory: true)
+        let viewContext = result.container.viewContext
+        for _ in 0..<10 {
+            let newItem = Entity(context: viewContext)
+            newItem.img = Data()
+        }
+        do {
+            try viewContext.save()
+        } catch {
+            // Replace this implementation with code to handle the error appropriately.
+            let nsError = error as NSError
+            debugPrint("🔴🔴🔴 Unresolved error \(nsError)")
+        }
+        return result
+    }()
+    
     
     let container: NSPersistentContainer
     

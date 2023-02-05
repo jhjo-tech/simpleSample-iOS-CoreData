@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.managedObjectContext) private var viewContext
     
     @State private var imagePickerPresented = false
     @State private var selectedImage: UIImage?
@@ -24,7 +25,7 @@ struct ContentView: View {
             Spacer()
             
             Button {
-                
+                saveImage(imageData: Data())
             } label: {
                 Text("Save Image")
                     .font(.system(size: 20, weight: .bold))
@@ -64,6 +65,19 @@ struct ContentView: View {
     private func showImage(image: UIImage?) -> Image {
         guard let guardImage = image else { return Image(systemName: "photo") }
         return Image(uiImage: guardImage)
+    }
+    
+    private func saveImage(imageData: Data) {
+        let newItem = Entity(context: viewContext)
+        newItem.img = Data()
+        do {
+            try viewContext.save()
+        }
+        catch {
+            // Replace this implementation with code to handle the error appropriately.
+            let nsError = error as NSError
+            debugPrint("🔴🔴🔴 Unresolved error \(nsError)")
+        }
     }
 }
 
