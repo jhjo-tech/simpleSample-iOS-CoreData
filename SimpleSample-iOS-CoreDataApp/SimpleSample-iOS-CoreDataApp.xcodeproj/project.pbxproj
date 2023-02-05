@@ -16,6 +16,7 @@
 		5912DD3D29851286007A73B3 /* SimpleSample_iOS_CoreDataAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5912DD3C29851286007A73B3 /* SimpleSample_iOS_CoreDataAppUITestsLaunchTests.swift */; };
 		5912DD85298512DC007A73B3 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5912DD84298512DC007A73B3 /* PersistenceController.swift */; };
 		5912DD872987E0C7007A73B3 /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5912DD862987E0C7007A73B3 /* ImagePickerController.swift */; };
+		5989E7A8298F7A0A001E91D8 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5989E7A6298F7A0A001E91D8 /* DataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		5912DD3C29851286007A73B3 /* SimpleSample_iOS_CoreDataAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleSample_iOS_CoreDataAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5912DD84298512DC007A73B3 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		5912DD862987E0C7007A73B3 /* ImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
+		5989E7A7298F7A0A001E91D8 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,12 +100,13 @@
 		5912DD1E29851286007A73B3 /* SimpleSample-iOS-CoreDataApp */ = {
 			isa = PBXGroup;
 			children = (
-				5912DD1F29851286007A73B3 /* SimpleSample_iOS_CoreDataAppApp.swift */,
-				5912DD2129851286007A73B3 /* ContentView.swift */,
-				5912DD84298512DC007A73B3 /* PersistenceController.swift */,
-				5912DD862987E0C7007A73B3 /* ImagePickerController.swift */,
 				5912DD2329851286007A73B3 /* Assets.xcassets */,
+				5912DD2129851286007A73B3 /* ContentView.swift */,
+				5989E7A6298F7A0A001E91D8 /* DataModel.xcdatamodeld */,
+				5912DD862987E0C7007A73B3 /* ImagePickerController.swift */,
+				5912DD84298512DC007A73B3 /* PersistenceController.swift */,
 				5912DD2529851286007A73B3 /* Preview Content */,
+				5912DD1F29851286007A73B3 /* SimpleSample_iOS_CoreDataAppApp.swift */,
 			);
 			path = "SimpleSample-iOS-CoreDataApp";
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5912DD85298512DC007A73B3 /* PersistenceController.swift in Sources */,
+				5989E7A8298F7A0A001E91D8 /* DataModel.xcdatamodeld in Sources */,
 				5912DD2229851286007A73B3 /* ContentView.swift in Sources */,
 				5912DD2029851286007A73B3 /* SimpleSample_iOS_CoreDataAppApp.swift in Sources */,
 				5912DD872987E0C7007A73B3 /* ImagePickerController.swift in Sources */,
@@ -591,6 +595,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5989E7A6298F7A0A001E91D8 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5989E7A7298F7A0A001E91D8 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 5989E7A7298F7A0A001E91D8 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5912DD1429851286007A73B3 /* Project object */;
 }
